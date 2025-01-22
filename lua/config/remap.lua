@@ -19,21 +19,22 @@ end
 
 -- Toggle line numbers for copying
 vim.keymap.set("n", "<leader>tl", function()
-    opt_toggle("relativenumber", true, false, "Relative line numbers")
-    opt_toggle("number", true, false, "Line numbers")
-end)
+        opt_toggle("relativenumber", true, false, "Relative line numbers")
+        opt_toggle("number", true, false, "Line numbers")
+    end,
+    { desc = "Toggle all line numbers" }
+)
 
 -- Toggle line wrapping
 vim.keymap.set("n", "<leader>tw", function()
-    opt_toggle("wrap", true, false, "Line wrapping")
-end)
+        opt_toggle("wrap", true, false, "Line wrapping")
+    end,
+    { desc = "Toggle line wrapping" }
+)
 
 -- GOATed remaps : Jimothy 'T(he)' Primeagen, asbjornHaland
--- Replace visual selection with stored content
-vim.keymap.set("x", "<leader>p", [["_dP]])
--- Delete visual selection or by movement without overwriting yank register
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
--- Store selection (by movement)
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
--- Store selection (by movement)
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Replace visual selection with content of yank register" })
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]],
+    { desc = "Delete visual selection or movement without overwriting yank register" })
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Store selection (or movement) in yank register" })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Store current line in yank register" })
