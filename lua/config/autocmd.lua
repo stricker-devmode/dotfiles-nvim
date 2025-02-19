@@ -50,7 +50,7 @@ autocmd("LspAttach", {
             { buffer = e.buf, desc = "LSP: Query workspace symbol" })
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
             { buffer = e.buf, desc = "LSP: Open diagnostics float" })
-        vim.keymap.set("n", "<leader>vm", function() vim.diagnostic.goto_prev() end,
+        vim.keymap.set("n", "<leader>vN", function() vim.diagnostic.goto_prev() end,
             { buffer = e.buf, desc = "LSP: Go to next diagnostic" })
         vim.keymap.set("n", "<leader>vn", function() vim.diagnostic.goto_next() end,
             { buffer = e.buf, desc = "LSP: Go to previous diagnostic" })
