@@ -38,3 +38,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]],
     { desc = "Delete visual selection or movement without overwriting yank register" })
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Store selection (or movement) in yank register" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Store current line in yank register" })
+
+-- Make current file executable
+vim.keymap.set("n", "<leader>x", [[:!chmod +x %<CR>]], { silent = true })
