@@ -41,3 +41,17 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Store current line in yank r
 
 -- Make current file executable
 vim.keymap.set("n", "<leader>x", [[:!chmod +x %<CR>]], { silent = true })
+
+-- Trigger formatting with conform.nvim
+-- Jimothy 'T(he)' Primeagen feat. https://www.josean.com/posts/neovim-linting-and-formatting
+vim.keymap.set({ "n", "v" }, "<leader>f", function()
+        require("conform").format({ lsp_fallback = true })
+    end,
+    { desc = "Format current file or visual range" }
+)
+
+-- Trigger linting with nvim-lint
+vim.keymap.set("n", "<leader>l", function()
+        require("lint").try_lint()
+    end,
+    { desc = "Trigger linting of current file" })
