@@ -44,8 +44,6 @@ autocmd("LspAttach", {
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end,
             { buffer = e.buf, desc = "LSP: Go to symbol definition" })
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { buffer = e.buf, desc = "LSP: Show hover" })
-        vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end,
-            { buffer = e.buf, desc = "LSP: Format buffer" })
         vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end,
             { buffer = e.buf, desc = "LSP: Query workspace symbol" })
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
