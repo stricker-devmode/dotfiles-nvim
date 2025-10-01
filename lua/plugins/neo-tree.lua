@@ -13,7 +13,7 @@ return {
         -- options go here
     },
     config = function()
-        vim.keymap.set("n", "<leader>e", "<Cmd>Neotree filesystem toggle<CR>")
+        vim.keymap.set("n", "<leader>e", "<Cmd>Neotree filesystem toggle reveal<CR>")
         vim.keymap.set("n", "<leader>b", "<Cmd>Neotree buffers toggle float<CR>")
         require("neo-tree").setup({
             close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
