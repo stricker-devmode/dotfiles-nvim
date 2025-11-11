@@ -43,6 +43,13 @@ return {
         vim.lsp.config('*', {
             capabilities = capabilities
         })
+        vim.lsp.config("gopls", {
+            settings = {
+                gopls = {
+                    usePlaceholders = true
+                }
+            }
+        })
         vim.lsp.config("lua_ls", {
             settings = {
                 Lua = {
