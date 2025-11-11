@@ -39,27 +39,19 @@ return {
                 "jedi_language_server",
                 "lua_ls",
             },
-            handlers = {
-                function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
+        })
+        vim.lsp.config('*', {
+            capabilities = capabilities
+        })
+        vim.lsp.config("lua_ls", {
+            settings = {
+                Lua = {
+                    runtime = { version = "Lua 5.1" },
+                    -- stop screaming in nvim config
+                    diagnostics = {
+                        globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
                     }
-                end,
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                runtime = { version = "Lua 5.1" },
-                                -- stop screaming in nvim config
-                                diagnostics = {
-                                    globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
-                                }
-                            }
-                        }
-                    }
-                end,
+                }
             }
         })
 
@@ -115,6 +107,9 @@ return {
             },
         })
         local inlay_hints = {
+            enabled = true
+        }
+        local codelens = {
             enabled = true
         }
     end
