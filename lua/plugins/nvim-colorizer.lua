@@ -1,20 +1,20 @@
 return {
     "catgoose/nvim-colorizer.lua",
-    config = function ()
+    config = function()
         require("colorizer").setup({
             filetypes = {
                 "*",
-                css = { mode = "background" },
-                html = { mode = "background" },
-                scss = { mode = "background" },
+                css = { mode = "background", names = { enable = true } },
+                html = { mode = "background", names = { enable = true } },
+                scss = { mode = "background", names = { enable = true } },
             },
             options = {
                 display = {
                     mode = "virtualtext",
                     virtualtext = { position = "after" },
                 },
-                parsers = { css = true },
+                parsers = { css = true, names = { enable = false } },
             },
         })
-    end
+    end,
 }
